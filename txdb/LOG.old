@@ -1,0 +1,6 @@
+=============== Jul 10, 2017 (CST) ===============
+02:40:59.811851 db@open opening
+02:40:59.811968 journal@recovery F·1
+02:40:59.812579 journal@recovery recovering @37
+02:40:59.814261 db@janitor F·3 G·0
+02:40:59.814282 db@open done T·2.344861ms

@@ -1,0 +1,111 @@
+/*
+  btcrobot is a Bitcoin, Litecoin and Altcoin trading bot written in golang,
+  it features multiple trading methods using technical analysis.
+
+  Disclaimer:
+
+  USE AT YOUR OWN RISK!
+
+  The author of this project is NOT responsible for any damage or loss caused
+  by this software. There can be bugs and the bot may not perform as expected
+  or specified. Please consider testing it first with paper trading /
+  backtesting on historical data. Also look at the code to see what how
+  it's working.
+
+  Weibo:http://weibo.com/bocaicfa
+
+  Version 0.10
+  time 2014-01-06 support auto process: login/buy/sell/update/cancel/delegation query/auto trade
+  Version 0.11
+  time 2014-01-09 support query details transaction data:buy/sell/trade/topsell/topbuy/new/high/low/last/...
+  Version 0.12
+  time 2014-01-10 support query my trade info, 5min/1day/1week/... kline data and real trx data
+ 				   support okcoin.com K-line via highchart
+  Version 0.13
+  time 2014-01-13 support EMA line to indict the time to buy and sell simulately, support diff factor
+ 				   support web interface to display huobi MA/EMA/MACD/Trender line too
+  Version 0.14
+  time 2014-01-14 support EMA line to indict the time to buy and sell in huobi.com
+  Version 0.15
+  time 2014-01-16 support send alert email when triger buy/sell point
+  Version 0.16
+  time 2014-01-27 support huibi official API,optimize MACD enter point
+  Version 0.17
+  time 2014-02-08 support the 5minutes momentum theory in fx
+  Version 0.18
+  time 2014-02-10 simplify the 5minutes momentum theory, only keep three key points:"enter"/"stop"/"exit" 
+  Version 0.19
+  time 2014-03-01 add the web UI to config option
+  Version 0.20
+  time 2014-03-13 add backtesting and fix crash bug
+  Version 0.21
+  time 2014-03-13 fliter the exception data in huobi.com
+  Version 0.22
+  time 2014-03-17 0.refactor 1.support customer strategy。2.support LTC。3.support OKcoin.com
+  Version 0.23
+  time 2014-03-21 add EMA diff factor(buyThreshold and sellThreshold) to deduce the fake buy/sell cross point
+  Version 0.24
+  time 2014-03-23 add stoploss
+  Version 0.25
+  time 2014-03-24 add  www-authenticate, default username/password is admin/123456
+  Version 0.26
+  time 2014-03-25 fix diff bug in okcoin mode
+  Version 0.27
+  time 2014-03-26 add supervisor to monitor the goroutine exception
+                  add display user account information at launch/buy/sell point
+                  add MACD strategy
+  Version 0.28
+  time 2014-03-27 fix the http request timeout issue,
+                  add EMA+MACD+EMA mix strategy
+  Version 0.29
+  time 2014-04-02 change the EMA diff to MACD diff,
+                  support web interface to display okcoin MA/EMA/MACD/Trender line
+  Version 0.30
+  time 2014-04-08 support KDJ,
+                  support EMA+MACD(once),
+                  support order book API
+                  optimize code structure
+  Version 0.31
+  time 2014-04-13 support Open order strategy,
+                  support KDJ_EX(internal) strategy,
+                  optimize code
+  Version 0.32
+  time 2014-04-16 split K-line data and trade center,
+                  eg. trade okcoin BTC according  huobi BTC kline!
+                  trade huobi LTC according  okcoin LTC kline!
+
+                  optimze the code structure, to wirte strategy more simple now, just realize the "tick" function
+
+  Version 0.33
+  time 2014-04-23 refactor the web UI using flat design
+
+  Version 0.34
+  time 2014-04-24 support multiple okcoin API to do trade cluster.
+  
+  Version 0.35
+  time 2014-05-05 support HLCross strategy
+                  optimize the UI css
+                  add the disciple mode for EMA
+                  fix KDJ bugs div by 0
+
+  Version 0.36
+  time 2014-05-07 auto rename secret.sample to secret.json
+  
+  Version 0.37
+  time 2014-05-13 redesign the strategy API, make it simple and clear
+                  add a three crow strategy sample.
+
+  Version 0.38
+  time 2014-05-18 add  circular order strategy
+
+  Version 0.39
+  time 2014-05-21 add getorder interface for huobi
+                  save the tx record to leveldb
+
+  Version 0.40
+  time 2014-05-30 add kdj_ex strategy
+                  optimize setup progress
+
+  Version 0.41
+  time 2014-07-16 support peatio exchange
+*/
